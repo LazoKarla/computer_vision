@@ -16,7 +16,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(320, 260);
+  createCanvas(windowWidth, windowHeight);
   // Create the video
   video = createCapture(VIDEO);
   video.size(320, 240);
@@ -42,8 +42,8 @@ function draw() {
   textAlign(LEFT);
   text(confianza, 10, height - 4);
 
-  if ((label = "yo" && confianza >= 0.8)) {
-    background(200, 200, 0);
+  if ((label = "yo")) {
+    filter(INVERT);
   }
 }
 
