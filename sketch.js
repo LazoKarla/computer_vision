@@ -46,9 +46,6 @@ function draw() {
     filter(INVERT);
   }
 
-  if (label == "mate") {
-    filter(OPACO);
-  }
   if (label == "guardia") {
     textSize(100);
     textAlign(CENTER);
