@@ -1,7 +1,7 @@
 // Classifier Variable
 let classifier;
 // Model URL
-let imageModelURL = "https://teachablemachine.withgoogle.com/models/H9U3nO2gp/";
+let imageModelURL = "https://teachablemachine.withgoogle.com/models/DbzRn9QIT/";
 
 // Video
 let video;
@@ -19,7 +19,7 @@ function setup() {
   createCanvas(windowWidth, windowHeight);
   // Create the video
   video = createCapture(VIDEO);
-  video.size(320, 240);
+  video.size(windowWidth, windowHeight);
   video.hide();
 
   // flippedVideo = ml5.flipImage(video);
@@ -42,8 +42,30 @@ function draw() {
   textAlign(LEFT);
   text(confianza, 10, height - 4);
 
-  if (label == "yo") {
+  if (label == "patricio") {
     filter(INVERT);
+  }
+
+  if (label == "mate") {
+    filter(OPACO);
+  }
+  if (label == "guardia") {
+    textSize(100);
+    textAlign(CENTER);
+    text("¿Quieres Jugar?", width / 2, height / 2);
+
+    fill(255); // Color blanco
+    let figurasY = height / 2 + 150;
+    ellipse(width / 4, figurasY, 100, 100);
+    rect(width / 2 - 50, figurasY - 50, 100, 100);
+    triangle(
+      width - 150,
+      figurasY + 50,
+      width - 100,
+      figurasY - 50,
+      width - 50,
+      figurasY + 50
+    );
   }
 }
 
@@ -59,7 +81,6 @@ function gotResult(results, error) {
     console.error(error);
     return;
   }
-
   // The results are in an array ordered by confidence.
   // console.log(results[0]);
   label = results[0].label;
