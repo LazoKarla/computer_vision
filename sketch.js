@@ -1,7 +1,7 @@
 // Classifier Variable
 let classifier;
 // Model URL
-let imageModelURL = "https://teachablemachine.withgoogle.com/models/DbzRn9QIT/";
+let imageModelURL = "https://teachablemachine.withgoogle.com/models/qSQm2YobT/";
 
 // Video
 let video;
@@ -39,7 +39,7 @@ function draw() {
   text(label, width / 2, height - 4);
 
   textSize(8);
-  textAlign(LEFT);
+  textAlign(CENTER);
   text(confianza, 10, height - 4);
 
   if (label == "patricio") {
@@ -51,7 +51,7 @@ function draw() {
     textAlign(CENTER);
     text("¿Quieres Jugar?", width / 2, height / 2);
 
-    fill(255); // Color blanco
+    fill(255);
     let figurasY = height / 2 + 150;
     ellipse(width / 4, figurasY, 100, 100);
     rect(width / 2 - 50, figurasY - 50, 100, 100);
