@@ -42,7 +42,7 @@ function draw() {
   textAlign(LEFT);
   text(confianza, 10, height - 4);
 
-  if ((label = "yo")) {
+  if (label == "yo") {
     filter(INVERT);
   }
 }
